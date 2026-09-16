@@ -1,20 +1,39 @@
-# Ενσωματωμένα Συστήματα Πραγματικού Χρόνου 
-Ξάνθος Παναγιώτου  
-ΑΕΜ: 11114  
+# Embedded Systems and Parallel Programming in C
 
-# Εργασία 1: Παραγωγός - Καταναλωτής (Pthreads)
-Υλοποίηση του προβλήματος Producer-Consumer σε γλώσσα C, χρησιμοποιώντας POSIX Threads (pthreads). Το πρόγραμμα προσομοιώνει μια δυναμική ουρά εργασιών (Task Queue) όπου τα νήματα ανταλλάσσουν και εκτελούν μαθηματικές συναρτήσεις, με στόχο την ελαχιστοποίηση του χρόνου αναμονής.
+Two individual university assignments implemented in C for an embedded and real-time systems course. The repository combines a parallel nearest-neighbour experiment with a concurrent producer-consumer simulation.
 
-Αρχείο: pc.c
-Compile:  gcc -O3 pc.c -o pc -lpthread -lm
-Εκτέλεση: ./pc <αριθμός_παραγωγών> <αριθμός_καταναλωτών> (π.χ. ./pc 2 8)
+## Projects
 
-# Εργασία 0: K-Nearest Neighbors (OpenMP & OpenBLAS)
-Αλγόριθμος εύρεσης των K-κοντινότερων γειτόνων για μεγάλο όγκο δεδομένων (N = 20.000 σημεία, 10 διαστάσεων). Η επιτάχυνση του αλγορίθμου επιτεύχθηκε μέσω:
-1. Γραμμικής Άλγεβρας (χρήση της βιβλιοθήκης OpenBLAS) για γρήγορο υπολογισμό αποστάσεων.
-2. Παράλληλου Προγραμματισμού (penMP Tasks) με τη μέθοδο διέρεσης για την αποφυγή υπερχείλισης της μνήμης.
-3. Μερικής ταξινόμησης (Quick-Select) για βέλτιστη αναζήτηση των γειτόνων.
+### Parallel k-NN with OpenMP and OpenBLAS
 
-Αρχεία: Ergasia0.c, Makefile
-Compile: make
-Εκτέλεση: ./Ergasia0
+`Ergasia0.c` implements a nearest-neighbour search over 20,000 points in a 10-dimensional space. The implementation uses OpenBLAS for distance calculations, OpenMP tasks for parallel work distribution, and Quickselect to avoid fully sorting every distance vector.
+
+- Source: `Ergasia0.c`
+- Build: `make`
+- Run: `./Ergasia0`
+- Report: [parallel k-NN with OpenMP and OpenBLAS](reports/parallel_knn_openmp_openblas_report_gr.pdf) (Greek)
+
+### Producer-Consumer with POSIX Threads
+
+`pc.c` models a dynamic FIFO task queue shared by producer and consumer threads. Producers add work packages and consumers execute the stored mathematical operations, with synchronization handled through POSIX threads.
+
+- Source: `pc.c`
+- Build: `gcc -O3 pc.c -o producer_consumer -pthread -lm`
+- Run: `./producer_consumer <producers> <consumers>`
+- Report: [producer-consumer with pthreads](reports/producer_consumer_pthreads_report_gr.pdf) (Greek)
+
+## Requirements
+
+- GCC or a compatible C compiler
+- OpenMP and OpenBLAS for the parallel k-NN program
+- POSIX threads for the producer-consumer program
+
+## Repository structure
+
+```text
+.
+├── Ergasia0.c       # parallel k-NN implementation
+├── pc.c             # producer-consumer implementation
+├── Makefile         # build target for the k-NN program
+└── reports/         # accompanying coursework reports in Greek
+```
