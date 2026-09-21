@@ -32,8 +32,8 @@ Two individual university assignments implemented in C for an embedded and real-
 
 ```text
 .
-├── Ergasia0.c       # parallel k-NN implementation
-├── pc.c             # producer-consumer implementation
-├── Makefile         # build target for the k-NN program
-└── reports/         # accompanying coursework reports in Greek
+├── Ergasia0.c # parallel k-NN implementation
+├── pc.c # producer-consumer implementation
+├── Makefile # build target for the k-NN program
+└── reports/ # accompanying coursework reports in Greek
 ```
