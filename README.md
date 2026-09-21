@@ -11,7 +11,7 @@ Two individual university assignments implemented in C for an embedded and real-
 - Source: `Ergasia0.c`
 - Build: `make`
 - Run: `./Ergasia0`
-- Report: [parallel k-NN with OpenMP and OpenBLAS](reports/parallel_knn_openmp_openblas_report_gr.pdf) (Greek)
+- Report: [parallel k-NN with OpenMP and OpenBLAS](reports/parallel_knn_openmp_openblas_report_gr.pdf) 
 
 ### Producer-Consumer with POSIX Threads
 
@@ -20,7 +20,7 @@ Two individual university assignments implemented in C for an embedded and real-
 - Source: `pc.c`
 - Build: `gcc -O3 pc.c -o producer_consumer -pthread -lm`
 - Run: `./producer_consumer <producers> <consumers>`
-- Report: [producer-consumer with pthreads](reports/producer_consumer_pthreads_report_gr.pdf) (Greek)
+- Report: [producer-consumer with pthreads](reports/producer_consumer_pthreads_report_gr.pdf) 
 
 ## Requirements
 
